@@ -18,7 +18,10 @@ var asnList = []struct {
 }{
 	// AI services
 	{396982, "OpenAI/ChatGPT"},
+	{396507, "OpenAI/ChatGPT (secondary)"},
 	{401307, "Anthropic/Claude"},
+	{399358, "Anthropic/Claude (infra)"},
+	{394698, "Docker Hub"},
 
 	// Social media
 	{32934, "Meta/Instagram/Facebook"},
