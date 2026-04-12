@@ -18,7 +18,7 @@ https://raw.githubusercontent.com/eduard256/russia-blocked-ips/main/manifest.jso
 
 ## Клиент
 
-Бинарник `rbi-client` -- демон, который следит за обновлениями списка и скачивает новую версию при появлении изменений. Если ваш роутер не падает от 41 000 маршрутов -- поздравляем, у вас хороший роутер.
+Бинарник `rbi-client` - демон, который следит за обновлениями списка и скачивает новую версию при появлении изменений. Если ваш роутер не падает от 41 000 маршрутов - поздравляем, у вас хороший роутер.
 
 ### Установка
 
@@ -52,7 +52,7 @@ rbi-client --output /etc/router/ip.txt --interval 5m --on-update "/etc/router/re
 | `--interval` | `5m` | Интервал проверки обновлений |
 | `--on-update` | -- | Команда, которая выполняется после каждого обновления файла |
 
-Клиент при каждой проверке скачивает `manifest.json` (~29 KB), сравнивает sha256 хеш. Если хеш изменился -- скачивает `ip.txt`, проверяет целостность, сохраняет и вызывает `--on-update`.
+Клиент при каждой проверке скачивает `manifest.json` (~29 KB), сравнивает sha256 хеш. Если хеш изменился - скачивает `ip.txt`, проверяет целостность, сохраняет и вызывает `--on-update`.
 
 ### Systemd
 
@@ -92,7 +92,7 @@ systemctl enable --now rbi-client
 
 ## Формат данных
 
-Все данные получены из открытых публичных источников. Исключительно в образовательных целях. Мы изучаем, как устроен интернет. Оказалось, что 9.4% IPv4-адресов -- это очень интересные адреса.
+Все данные получены из открытых публичных источников. Исключительно в образовательных целях. Мы изучаем, как устроен интернет. Оказалось, что 9.4% IPv4-адресов - это очень интересные адреса.
 
 ### ip.txt
 
@@ -158,7 +158,7 @@ systemctl enable --now rbi-client
 | Источник | Описание |
 |---|---|
 | Telegram | Официальный cidr.txt + ASN 62041, 211157 |
-| GitHub | api.github.com/meta -- все сервисные диапазоны |
+| GitHub | api.github.com/meta - все сервисные диапазоны |
 | Zoom | Официальные списки (Meetings, Phone, General) |
 | Apple iCloud | Egress IP ranges (Private Relay, FaceTime, iMessage) |
 | Discord | IP из Re-filter + ASN 36459 |
@@ -172,7 +172,7 @@ systemctl enable --now rbi-client
 | Источник | Описание |
 |---|---|
 | Cloudflare | Официальные диапазоны IPv4/IPv6 |
-| AWS | ip-ranges.json -- все регионы |
+| AWS | ip-ranges.json - все регионы |
 | Google | goog.json + cloud.json |
 | Azure | ServiceTags (URL обновляется динамически) |
 | Fastly | public-ip-list |
@@ -185,7 +185,7 @@ systemctl enable --now rbi-client
 
 OpenAI/ChatGPT, Anthropic/Claude, Meta, Twitter/X, Discord, Netflix, Twitch, YouTube CDN, Telegram, Zoom, Spotify, LinkedIn, Google, Microsoft, Akamai, Cloudflare, Fastly, Hetzner, DigitalOcean, AWS, Oracle Cloud, OVH, Vultr, Contabo, Gcore, Valve/Steam (~50 ASN по регионам), Riot Games, Roblox, Epic Games, Blizzard, Nintendo, Sony, Apple, Cogent, Scaleway, CDN77, и другие.
 
-Полный список ASN -- в файле `internal/asn/asn.go`.
+Полный список ASN - в файле `internal/asn/asn.go`.
 
 ### Прочие
 
@@ -196,24 +196,74 @@ OpenAI/ChatGPT, Anthropic/Claude, Meta, Twitter/X, Discord, Netflix, Twitch, You
 
 ## Для ИИ-ассистентов
 
-Если вы используете ИИ для написания скриптов, скопируйте этот блок в промпт:
+Если вы хотите, чтобы ИИ написал вам скрипт для работы с этими данными - скопируйте блок ниже в чат с ним. Он разберётся. У него есть воображение.
 
-```
-Файл ip.txt доступен по адресу:
+````
+## Контекст
+
+Проект russia-blocked-ips - агрегированный список IP-адресов и CIDR-диапазонов,
+которые ограничены на территории РФ (со стороны государства и со стороны санкций).
+Список содержит ~41 000 CIDR-записей, покрывающих ~400 млн IPv4-адресов.
+Обновляется автоматически каждые 6 часов.
+
+Типичное применение: настройка маршрутизации на Linux-роутере так, чтобы трафик
+к этим адресам шёл через отдельный сетевой интерфейс.
+
+## Файлы
+
+ip.txt - основной файл, один CIDR на строку (1.2.3.0/24 или 2001:db8::/32).
+Без комментариев, без пустых строк. IPv4 и IPv6. Отсортирован. ~700 KB.
 https://raw.githubusercontent.com/eduard256/russia-blocked-ips/main/ip.txt
 
-Формат: один CIDR-диапазон на строку (например 1.2.3.0/24 или 2001:db8::/32).
-Без комментариев, без пустых строк, без заголовков.
-IPv4 и IPv6 адреса. Файл отсортирован по адресу.
-Примерный размер: ~41 000 строк, ~700 KB.
-
-Метаданные доступны в manifest.json:
+manifest.json - метаданные: sha256 хеш ip.txt, количество записей, время обновления, список источников.
 https://raw.githubusercontent.com/eduard256/russia-blocked-ips/main/manifest.json
 
-Поле sha256 содержит хеш ip.txt для проверки обновлений.
-Поле total_cidrs содержит количество записей.
-Поле updated_at содержит время последнего обновления.
-```
+## Клиент rbi-client
+
+Готовый демон, который автоматически скачивает и обновляет ip.txt.
+Бинарники для всех платформ: https://github.com/eduard256/russia-blocked-ips/releases
+
+Установка (Linux x86_64):
+curl -L https://github.com/eduard256/russia-blocked-ips/releases/latest/download/rbi-client-linux-amd64 -o /usr/local/bin/rbi-client
+chmod +x /usr/local/bin/rbi-client
+
+Другие платформы:
+- Linux ARM64: rbi-client-linux-arm64
+- Linux ARM: rbi-client-linux-arm
+- OpenWrt MIPS: rbi-client-linux-mips
+- OpenWrt MIPS LE: rbi-client-linux-mipsle
+- macOS ARM: rbi-client-darwin-arm64
+- macOS Intel: rbi-client-darwin-amd64
+- Windows: rbi-client-windows-amd64.exe
+
+Параметры запуска:
+  --output /path/to/ip.txt    # куда сохранять файл (по умолчанию ./ip.txt)
+  --interval 5m               # интервал проверки обновлений (по умолчанию 5m)
+  --on-update "command"        # команда после обновления файла
+
+Примеры:
+  rbi-client --output /etc/router/ip.txt --interval 5m --on-update "/etc/router/reload.sh"
+  rbi-client --output /tmp/ip.txt --interval 10m
+  rbi-client --output /etc/bird/blocked.txt --on-update "birdc configure"
+
+Как работает: каждые N минут скачивает manifest.json (~29 KB), сравнивает sha256.
+Если хеш изменился - скачивает ip.txt, проверяет целостность, сохраняет,
+вызывает --on-update команду. Если нет - ждёт следующей проверки.
+
+## Типичные задачи для скриптов
+
+1. Прочитать ip.txt и добавить все CIDR как маршруты через определённый gateway:
+   ip route add <cidr> via <gateway> dev <interface> table <table_id>
+
+2. Создать nftables set или ipset из ip.txt для policy-based routing.
+
+3. Написать reload-скрипт для --on-update: очистить старые маршруты,
+   прочитать новый ip.txt, добавить маршруты заново.
+
+4. Systemd unit для автозапуска rbi-client как демона.
+
+5. Скрипт для OpenWrt, который скачивает ip.txt и применяет через ip route или ipset.
+````
 
 ## Сборка из исходников
 

@@ -18,7 +18,7 @@ https://raw.githubusercontent.com/eduard256/russia-blocked-ips/main/manifest.jso
 
 ## Client
 
-`rbi-client` is a daemon that watches for list updates and downloads the new version when changes appear. If your router doesn't crash from 41,000 routes -- congratulations, you have a good router.
+`rbi-client` is a daemon that watches for list updates and downloads the new version when changes appear. If your router doesn't crash from 41,000 routes - congratulations, you have a good router.
 
 ### Installation
 
@@ -52,7 +52,7 @@ rbi-client --output /etc/router/ip.txt --interval 5m --on-update "/etc/router/re
 | `--interval` | `5m` | Update check interval |
 | `--on-update` | -- | Command to execute after each file update |
 
-The client downloads `manifest.json` (~29 KB) on each check, compares the sha256 hash. If the hash changed -- downloads `ip.txt`, verifies integrity, saves it and runs `--on-update`.
+The client downloads `manifest.json` (~29 KB) on each check, compares the sha256 hash. If the hash changed - downloads `ip.txt`, verifies integrity, saves it and runs `--on-update`.
 
 ### Systemd
 
@@ -158,7 +158,7 @@ Data is collected from ~146 open sources.
 | Source | Description |
 |---|---|
 | Telegram | Official cidr.txt + ASN 62041, 211157 |
-| GitHub | api.github.com/meta -- all service ranges |
+| GitHub | api.github.com/meta - all service ranges |
 | Zoom | Official lists (Meetings, Phone, General) |
 | Apple iCloud | Egress IP ranges (Private Relay, FaceTime, iMessage) |
 | Discord | IPs from Re-filter + ASN 36459 |
@@ -172,7 +172,7 @@ Data is collected from ~146 open sources.
 | Source | Description |
 |---|---|
 | Cloudflare | Official IPv4/IPv6 ranges |
-| AWS | ip-ranges.json -- all regions |
+| AWS | ip-ranges.json - all regions |
 | Google | goog.json + cloud.json |
 | Azure | ServiceTags (URL updated dynamically) |
 | Fastly | public-ip-list |
@@ -196,24 +196,74 @@ Full ASN list is in `internal/asn/asn.go`.
 
 ## For AI assistants
 
-If you're using AI to write scripts, copy this block into your prompt:
+If you want AI to write a script for working with this data, copy the block below into your chat. It'll figure it out. It has imagination.
 
-```
-File ip.txt is available at:
+````
+## Context
+
+The russia-blocked-ips project is an aggregated list of IP addresses and CIDR ranges
+that are restricted in Russia (by the government and by sanctions).
+The list contains ~41,000 CIDR entries covering ~400M IPv4 addresses.
+Automatically updated every 6 hours.
+
+Typical use: configuring routing on a Linux router so that traffic
+to these addresses goes through a separate network interface.
+
+## Files
+
+ip.txt - main file, one CIDR per line (1.2.3.0/24 or 2001:db8::/32).
+No comments, no empty lines. IPv4 and IPv6. Sorted. ~700 KB.
 https://raw.githubusercontent.com/eduard256/russia-blocked-ips/main/ip.txt
 
-Format: one CIDR range per line (e.g. 1.2.3.0/24 or 2001:db8::/32).
-No comments, no empty lines, no headers.
-IPv4 and IPv6 addresses. File is sorted by address.
-Approximate size: ~41,000 lines, ~700 KB.
-
-Metadata is available in manifest.json:
+manifest.json - metadata: sha256 hash of ip.txt, entry count, update time, source list.
 https://raw.githubusercontent.com/eduard256/russia-blocked-ips/main/manifest.json
 
-The sha256 field contains the ip.txt hash for update checking.
-The total_cidrs field contains the number of entries.
-The updated_at field contains the last update time.
-```
+## Client rbi-client
+
+A ready-made daemon that automatically downloads and updates ip.txt.
+Binaries for all platforms: https://github.com/eduard256/russia-blocked-ips/releases
+
+Installation (Linux x86_64):
+curl -L https://github.com/eduard256/russia-blocked-ips/releases/latest/download/rbi-client-linux-amd64 -o /usr/local/bin/rbi-client
+chmod +x /usr/local/bin/rbi-client
+
+Other platforms:
+- Linux ARM64: rbi-client-linux-arm64
+- Linux ARM: rbi-client-linux-arm
+- OpenWrt MIPS: rbi-client-linux-mips
+- OpenWrt MIPS LE: rbi-client-linux-mipsle
+- macOS ARM: rbi-client-darwin-arm64
+- macOS Intel: rbi-client-darwin-amd64
+- Windows: rbi-client-windows-amd64.exe
+
+Launch parameters:
+  --output /path/to/ip.txt    # where to save the file (default ./ip.txt)
+  --interval 5m               # update check interval (default 5m)
+  --on-update "command"        # command to run after file update
+
+Examples:
+  rbi-client --output /etc/router/ip.txt --interval 5m --on-update "/etc/router/reload.sh"
+  rbi-client --output /tmp/ip.txt --interval 10m
+  rbi-client --output /etc/bird/blocked.txt --on-update "birdc configure"
+
+How it works: every N minutes downloads manifest.json (~29 KB), compares sha256.
+If hash changed - downloads ip.txt, verifies integrity, saves it,
+runs --on-update command. If not - waits for next check.
+
+## Typical tasks for scripts
+
+1. Read ip.txt and add all CIDRs as routes through a specific gateway:
+   ip route add <cidr> via <gateway> dev <interface> table <table_id>
+
+2. Create nftables set or ipset from ip.txt for policy-based routing.
+
+3. Write a reload script for --on-update: flush old routes,
+   read new ip.txt, add routes again.
+
+4. Systemd unit for autostarting rbi-client as a daemon.
+
+5. Script for OpenWrt that downloads ip.txt and applies via ip route or ipset.
+````
 
 ## Build from source
 
