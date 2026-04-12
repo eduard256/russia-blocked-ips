@@ -1,0 +1,84 @@
+name: Build and release client
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - goos: linux
+            goarch: amd64
+          - goos: linux
+            goarch: arm64
+          - goos: linux
+            goarch: arm
+            goarm: "7"
+          - goos: linux
+            goarch: mips
+            gomips: softfloat
+          - goos: linux
+            goarch: mipsle
+            gomips: softfloat
+          - goos: darwin
+            goarch: amd64
+          - goos: darwin
+            goarch: arm64
+          - goos: windows
+            goarch: amd64
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.26'
+
+      - name: Build
+        env:
+          GOOS: ${{ matrix.goos }}
+          GOARCH: ${{ matrix.goarch }}
+          GOARM: ${{ matrix.goarm }}
+          GOMIPS: ${{ matrix.gomips }}
+          CGO_ENABLED: "0"
+        run: |
+          EXT=""
+          if [ "${GOOS}" = "windows" ]; then EXT=".exe"; fi
+          BINARY="rbi-client-${GOOS}-${GOARCH}${EXT}"
+          go build -ldflags="-s -w" -o "${BINARY}" ./cmd/client/
+          echo "BINARY=${BINARY}" >> "${GITHUB_ENV}"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.BINARY }}
+          path: ${{ env.BINARY }}
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/')
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+          merge-multiple: true
+
+      - name: Create release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG_NAME: ${{ github.ref_name }}
+          REPO: ${{ github.repository }}
+        run: |
+          chmod +x artifacts/rbi-client-linux-* artifacts/rbi-client-darwin-* || true
+          gh release create "${TAG_NAME}" artifacts/* \
+            --repo "${REPO}" \
+            --title "rbi-client ${TAG_NAME}" \
+            --notes "Pre-built binaries for all platforms"

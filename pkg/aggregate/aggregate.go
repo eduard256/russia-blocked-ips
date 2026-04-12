@@ -92,3 +92,51 @@ func mergePair(a, b netip.Prefix) (netip.Prefix, bool) {
 	}
 	return netip.Prefix{}, false
 }
+
+// Exclude removes all prefixes that overlap with any of the excluded ranges.
+// A prefix is removed if it is fully contained within an excluded range.
+// If a prefix partially overlaps (our range is bigger than excluded), it stays.
+func Exclude(prefixes, excluded []netip.Prefix) []netip.Prefix {
+	if len(excluded) == 0 {
+		return prefixes
+	}
+
+	// sort and merge excluded ranges for efficient lookup
+	excluded = Merge(excluded)
+
+	var result []netip.Prefix
+	for _, p := range prefixes {
+		if containedByAny(p, excluded) {
+			continue
+		}
+		result = append(result, p)
+	}
+	return result
+}
+
+// containedByAny checks if prefix is fully contained within any of the sorted ranges.
+// Uses binary search for O(log n) per lookup.
+func containedByAny(p netip.Prefix, sorted []netip.Prefix) bool {
+	addr := p.Addr()
+
+	// binary search: find the last range whose start <= addr
+	lo, hi := 0, len(sorted)-1
+	for lo <= hi {
+		mid := (lo + hi) / 2
+		if sorted[mid].Addr().Compare(addr) <= 0 {
+			lo = mid + 1
+		} else {
+			hi = mid - 1
+		}
+	}
+
+	// check candidate (hi) and its neighbors
+	for i := max(0, hi-1); i <= min(hi+1, len(sorted)-1); i++ {
+		s := sorted[i]
+		// p is contained if s covers all of p's addresses
+		if s.Contains(addr) && s.Bits() <= p.Bits() {
+			return true
+		}
+	}
+	return false
+}

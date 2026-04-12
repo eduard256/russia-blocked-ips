@@ -261,6 +261,28 @@ func RIPEPrefixes(data []byte) []netip.Prefix {
 	return result
 }
 
+// RIPECountryPrefixes parses RIPE country-resource-list JSON for IPv4 prefixes
+func RIPECountryPrefixes(data []byte) []netip.Prefix {
+	var doc struct {
+		Data struct {
+			Resources struct {
+				IPv4 []string `json:"ipv4"`
+			} `json:"resources"`
+		} `json:"data"`
+	}
+	if json.Unmarshal(data, &doc) != nil {
+		return nil
+	}
+
+	var result []netip.Prefix
+	for _, s := range doc.Data.Resources.IPv4 {
+		if p := parsePrefix(s); p.IsValid() {
+			result = append(result, p)
+		}
+	}
+	return result
+}
+
 // SpamhausDROP parses Spamhaus DROP text format: "CIDR ; SBLxxx"
 func SpamhausDROP(data []byte) []netip.Prefix {
 	return PlainText(data) // same format -- lines with ; comments
