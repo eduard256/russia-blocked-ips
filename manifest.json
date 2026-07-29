@@ -2,9 +2,9 @@
   "name": "Russia Blocked IPs",
   "description": "Aggregated list of all IP addresses blocked in Russia and by sanctions",
   "author": "eduard256",
-  "updated_at": "2026-07-29T13:47:52Z",
-  "total_cidrs": 45768,
-  "sha256": "2201a4162841e2c97fe376b5370c04da7dc9cb52a32de7ac8c5c7bfb2616effe",
+  "updated_at": "2026-07-29T18:59:57Z",
+  "total_cidrs": 45767,
+  "sha256": "57c6e1cacd9afd8c42957f33b519b8e201dd6addbec02cd3de10ba0b23d2fa23",
   "sources": [
     {
       "name": "antifilter.download/ip.lst",
@@ -33,7 +33,7 @@
     {
       "name": "antifilter.network/ip.lst",
       "url": "https://antifilter.network/download/ip.lst",
-      "entries": 100362,
+      "entries": 100360,
       "status": "ok"
     },
     {
@@ -265,9 +265,9 @@
       "status": "ok"
     },
     {
-      "name": "AS2906 (Netflix)",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS2906",
-      "entries": 531,
+      "name": "AS211157 (Telegram (secondary))",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS211157",
+      "entries": 3,
       "status": "ok"
     },
     {
@@ -277,21 +277,57 @@
       "status": "ok"
     },
     {
-      "name": "AS32934 (Meta/Instagram/Facebook)",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS32934",
-      "entries": 557,
-      "status": "ok"
-    },
-    {
       "name": "AS399358 (Valve/Steam (PoP6))",
       "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS399358",
       "entries": 3,
       "status": "ok"
     },
     {
+      "name": "AS396507 (OpenAI/ChatGPT (secondary))",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS396507",
+      "entries": 7,
+      "status": "ok"
+    },
+    {
+      "name": "AS396982 (OpenAI/ChatGPT)",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS396982",
+      "entries": 3747,
+      "status": "ok"
+    },
+    {
+      "name": "AS15169 (Google)",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS15169",
+      "entries": 1409,
+      "status": "ok"
+    },
+    {
+      "name": "AS14413 (LinkedIn)",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS14413",
+      "entries": 45,
+      "status": "ok"
+    },
+    {
       "name": "AS401307 (Anthropic/Claude)",
       "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS401307",
       "entries": 39,
+      "status": "ok"
+    },
+    {
+      "name": "AS32934 (Meta/Instagram/Facebook)",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS32934",
+      "entries": 557,
+      "status": "ok"
+    },
+    {
+      "name": "AS21342 (Akamai (CDN2))",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS21342",
+      "entries": 172,
+      "status": "ok"
+    },
+    {
+      "name": "AS2906 (Netflix)",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS2906",
+      "entries": 531,
       "status": "ok"
     },
     {
@@ -307,15 +343,21 @@
       "status": "ok"
     },
     {
+      "name": "AS8075 (Microsoft)",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS8075",
+      "entries": 1271,
+      "status": "ok"
+    },
+    {
       "name": "AS13414 (Twitter/X)",
       "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS13414",
       "entries": 28,
       "status": "ok"
     },
     {
-      "name": "AS46489 (Twitch)",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS46489",
-      "entries": 0,
+      "name": "AS24940 (Hetzner)",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS24940",
+      "entries": 94,
       "status": "ok"
     },
     {
@@ -331,39 +373,33 @@
       "status": "ok"
     },
     {
-      "name": "AS211157 (Telegram (secondary))",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS211157",
-      "entries": 3,
+      "name": "AS8403 (Spotify)",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS8403",
+      "entries": 0,
       "status": "ok"
     },
     {
-      "name": "AS15169 (Google)",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS15169",
-      "entries": 1409,
+      "name": "AS20940 (Akamai)",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS20940",
+      "entries": 4726,
       "status": "ok"
     },
     {
-      "name": "AS8075 (Microsoft)",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS8075",
-      "entries": 1271,
+      "name": "AS31898 (Oracle Cloud)",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS31898",
+      "entries": 3441,
       "status": "ok"
     },
     {
-      "name": "AS54113 (Fastly)",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS54113",
-      "entries": 1814,
+      "name": "AS22634 (Tumblr)",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS22634",
+      "entries": 0,
       "status": "ok"
     },
     {
-      "name": "AS14413 (LinkedIn)",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS14413",
-      "entries": 45,
-      "status": "ok"
-    },
-    {
-      "name": "AS24940 (Hetzner)",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS24940",
-      "entries": 94,
+      "name": "AS30103 (Zoom)",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS30103",
+      "entries": 399,
       "status": "ok"
     },
     {
@@ -379,147 +415,9 @@
       "status": "ok"
     },
     {
-      "name": "AS14618 (Amazon AWS (secondary))",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS14618",
-      "entries": 1965,
-      "status": "ok"
-    },
-    {
-      "name": "AS714 (Apple)",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS714",
-      "entries": 1980,
-      "status": "ok"
-    },
-    {
-      "name": "AS30103 (Zoom)",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS30103",
-      "entries": 399,
-      "status": "ok"
-    },
-    {
-      "name": "AS31898 (Oracle Cloud)",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS31898",
-      "entries": 3441,
-      "status": "ok"
-    },
-    {
-      "name": "AS6507 (Riot Games)",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS6507",
-      "entries": 37,
-      "status": "ok"
-    },
-    {
-      "name": "AS2527 (Sony Interactive Entertainment)",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS2527",
-      "entries": 76,
-      "status": "ok"
-    },
-    {
-      "name": "AS6142 (Valve/Steam (primary))",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS6142",
-      "entries": 57,
-      "status": "ok"
-    },
-    {
-      "name": "AS16509 (Amazon AWS (primary))",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS16509",
-      "entries": 21533,
-      "status": "ok"
-    },
-    {
-      "name": "AS8361 (Valve/Steam (secondary))",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS8361",
+      "name": "AS46489 (Twitch)",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS46489",
       "entries": 0,
-      "status": "ok"
-    },
-    {
-      "name": "AS10747 (Twitch (secondary))",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS10747",
-      "entries": 25,
-      "status": "ok"
-    },
-    {
-      "name": "AS8849 (Mismatch)",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS8849",
-      "entries": 51,
-      "status": "ok"
-    },
-    {
-      "name": "AS11278 (Riot Games (secondary))",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS11278",
-      "entries": 14,
-      "status": "ok"
-    },
-    {
-      "name": "AS8403 (Spotify)",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS8403",
-      "entries": 0,
-      "status": "ok"
-    },
-    {
-      "name": "AS12222 (Naver/LINE)",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS12222",
-      "entries": 152,
-      "status": "ok"
-    },
-    {
-      "name": "AS12876 (Scaleway/Online.net)",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS12876",
-      "entries": 28,
-      "status": "ok"
-    },
-    {
-      "name": "AS11795 (Epic Games)",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS11795",
-      "entries": 15,
-      "status": "ok"
-    },
-    {
-      "name": "AS13720 (ImageShack)",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS13720",
-      "entries": 44,
-      "status": "ok"
-    },
-    {
-      "name": "AS15224 (Valve/Steam (EU))",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS15224",
-      "entries": 89,
-      "status": "ok"
-    },
-    {
-      "name": "AS16276 (OVH)",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS16276",
-      "entries": 745,
-      "status": "ok"
-    },
-    {
-      "name": "AS20940 (Akamai)",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS20940",
-      "entries": 4726,
-      "status": "ok"
-    },
-    {
-      "name": "AS396507 (OpenAI/ChatGPT (secondary))",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS396507",
-      "entries": 7,
-      "status": "ok"
-    },
-    {
-      "name": "AS174 (Cogent Communications)",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS174",
-      "entries": 4537,
-      "status": "ok"
-    },
-    {
-      "name": "AS17204 (Valve/Steam (relay))",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS17204",
-      "entries": 3,
-      "status": "ok"
-    },
-    {
-      "name": "AS20054 (Valve/Steam (CDN))",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS20054",
-      "entries": 64,
       "status": "ok"
     },
     {
@@ -529,15 +427,9 @@
       "status": "ok"
     },
     {
-      "name": "AS22634 (Tumblr)",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS22634",
-      "entries": 0,
-      "status": "ok"
-    },
-    {
-      "name": "AS21342 (Akamai (CDN2))",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS21342",
-      "entries": 172,
+      "name": "AS57976 (Blizzard Entertainment)",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS57976",
+      "entries": 182,
       "status": "ok"
     },
     {
@@ -547,27 +439,9 @@
       "status": "ok"
     },
     {
-      "name": "AS26008 (Nintendo)",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS26008",
-      "entries": 17,
-      "status": "ok"
-    },
-    {
-      "name": "AS24319 (Valve/Steam (chat))",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS24319",
-      "entries": 193,
-      "status": "ok"
-    },
-    {
-      "name": "AS29447 (Valve/Steam (EU2))",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS29447",
-      "entries": 33,
-      "status": "ok"
-    },
-    {
-      "name": "AS31108 (Valve/Steam (US))",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS31108",
-      "entries": 7,
+      "name": "AS31223 (Roblox (EU))",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS31223",
+      "entries": 2,
       "status": "ok"
     },
     {
@@ -577,9 +451,9 @@
       "status": "ok"
     },
     {
-      "name": "AS31223 (Roblox (EU))",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS31223",
-      "entries": 2,
+      "name": "AS24319 (Valve/Steam (chat))",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS24319",
+      "entries": 193,
       "status": "ok"
     },
     {
@@ -589,9 +463,9 @@
       "status": "ok"
     },
     {
-      "name": "AS19541 (Riot Games (valorant))",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS19541",
-      "entries": 0,
+      "name": "AS26008 (Nintendo)",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS26008",
+      "entries": 17,
       "status": "ok"
     },
     {
@@ -601,27 +475,15 @@
       "status": "ok"
     },
     {
-      "name": "AS20473 (Vultr)",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS20473",
-      "entries": 2141,
+      "name": "AS34164 (Valve/Steam (EU3))",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS34164",
+      "entries": 188,
       "status": "ok"
     },
     {
-      "name": "AS33905 (Akamai (CDN4))",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS33905",
-      "entries": 71,
-      "status": "ok"
-    },
-    {
-      "name": "AS32787 (Akamai (CDN3))",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS32787",
-      "entries": 375,
-      "status": "ok"
-    },
-    {
-      "name": "AS396982 (OpenAI/ChatGPT)",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS396982",
-      "entries": 3747,
+      "name": "AS29447 (Valve/Steam (EU2))",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS29447",
+      "entries": 33,
       "status": "ok"
     },
     {
@@ -631,33 +493,15 @@
       "status": "ok"
     },
     {
-      "name": "AS35834 (Valve/Steam (AU))",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS35834",
-      "entries": 9,
+      "name": "AS31108 (Valve/Steam (US))",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS31108",
+      "entries": 7,
       "status": "ok"
     },
     {
-      "name": "AS6185 (Apple (CDN))",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS6185",
-      "entries": 98,
-      "status": "ok"
-    },
-    {
-      "name": "AS11281 (Roblox (primary))",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS11281",
-      "entries": 11,
-      "status": "ok"
-    },
-    {
-      "name": "AS34164 (Valve/Steam (EU3))",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS34164",
-      "entries": 188,
-      "status": "ok"
-    },
-    {
-      "name": "AS38118 (Valve/Steam (SG))",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS38118",
-      "entries": 0,
+      "name": "AS16509 (Amazon AWS (primary))",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS16509",
+      "entries": 21533,
       "status": "ok"
     },
     {
@@ -667,9 +511,27 @@
       "status": "ok"
     },
     {
+      "name": "AS38118 (Valve/Steam (SG))",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS38118",
+      "entries": 0,
+      "status": "ok"
+    },
+    {
       "name": "AS42708 (Portlane)",
       "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS42708",
       "entries": 215,
+      "status": "ok"
+    },
+    {
+      "name": "AS44907 (Valve/Steam (CL))",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS44907",
+      "entries": 3,
+      "status": "ok"
+    },
+    {
+      "name": "AS35994 (Akamai (CDN5))",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS35994",
+      "entries": 419,
       "status": "ok"
     },
     {
@@ -685,27 +547,9 @@
       "status": "ok"
     },
     {
-      "name": "AS53667 (Ponynet/FranTech)",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS53667",
-      "entries": 76,
-      "status": "ok"
-    },
-    {
       "name": "AS49846 (Valve/Steam (IN))",
       "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS49846",
       "entries": 2,
-      "status": "ok"
-    },
-    {
-      "name": "AS51167 (Contabo)",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS51167",
-      "entries": 573,
-      "status": "ok"
-    },
-    {
-      "name": "AS54253 (Valve/Steam (KR))",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS54253",
-      "entries": 833,
       "status": "ok"
     },
     {
@@ -715,9 +559,21 @@
       "status": "ok"
     },
     {
-      "name": "AS54265 (Roblox (CDN))",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS54265",
-      "entries": 0,
+      "name": "AS51167 (Contabo)",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS51167",
+      "entries": 573,
+      "status": "ok"
+    },
+    {
+      "name": "AS53667 (Ponynet/FranTech)",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS53667",
+      "entries": 76,
+      "status": "ok"
+    },
+    {
+      "name": "AS32787 (Akamai (CDN3))",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS32787",
+      "entries": 375,
       "status": "ok"
     },
     {
@@ -727,15 +583,21 @@
       "status": "ok"
     },
     {
-      "name": "AS57976 (Blizzard Entertainment)",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS57976",
-      "entries": 182,
+      "name": "AS54113 (Fastly)",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS54113",
+      "entries": 1814,
       "status": "ok"
     },
     {
-      "name": "AS58061 (Valve/Steam (EG))",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS58061",
-      "entries": 409,
+      "name": "AS210366 (Valve/Steam (IT))",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS210366",
+      "entries": 2,
+      "status": "ok"
+    },
+    {
+      "name": "AS56630 (Valve/Steam (PE))",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS56630",
+      "entries": 138,
       "status": "ok"
     },
     {
@@ -751,15 +613,21 @@
       "status": "ok"
     },
     {
-      "name": "AS56630 (Valve/Steam (PE))",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS56630",
-      "entries": 138,
-      "status": "ok"
-    },
-    {
       "name": "AS62014 (Valve/Steam (TW))",
       "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS62014",
       "entries": 8,
+      "status": "ok"
+    },
+    {
+      "name": "AS14618 (Amazon AWS (secondary))",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS14618",
+      "entries": 1965,
+      "status": "ok"
+    },
+    {
+      "name": "AS54253 (Valve/Steam (KR))",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS54253",
+      "entries": 833,
       "status": "ok"
     },
     {
@@ -769,15 +637,33 @@
       "status": "ok"
     },
     {
+      "name": "AS63949 (Akamai (Linode))",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS63949",
+      "entries": 443,
+      "status": "ok"
+    },
+    {
       "name": "AS62567 (DigitalOcean (secondary))",
       "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS62567",
       "entries": 0,
       "status": "ok"
     },
     {
-      "name": "AS63949 (Akamai (Linode))",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS63949",
-      "entries": 443,
+      "name": "AS33905 (Akamai (CDN4))",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS33905",
+      "entries": 71,
+      "status": "ok"
+    },
+    {
+      "name": "AS58061 (Valve/Steam (EG))",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS58061",
+      "entries": 409,
+      "status": "ok"
+    },
+    {
+      "name": "AS139808 (Valve/Steam (CN))",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS139808",
+      "entries": 6,
       "status": "ok"
     },
     {
@@ -787,9 +673,9 @@
       "status": "ok"
     },
     {
-      "name": "AS139808 (Valve/Steam (CN))",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS139808",
-      "entries": 6,
+      "name": "AS202023 (Valve/Steam (TR))",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS202023",
+      "entries": 12,
       "status": "ok"
     },
     {
@@ -805,27 +691,9 @@
       "status": "ok"
     },
     {
-      "name": "AS202023 (Valve/Steam (TR))",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS202023",
-      "entries": 12,
-      "status": "ok"
-    },
-    {
-      "name": "AS210366 (Valve/Steam (IT))",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS210366",
-      "entries": 2,
-      "status": "ok"
-    },
-    {
-      "name": "AS35994 (Akamai (CDN5))",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS35994",
-      "entries": 419,
-      "status": "ok"
-    },
-    {
-      "name": "AS44907 (Valve/Steam (CL))",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS44907",
-      "entries": 3,
+      "name": "AS203663 (Valve/Steam (UK))",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS203663",
+      "entries": 1,
       "status": "ok"
     },
     {
@@ -835,21 +703,21 @@
       "status": "ok"
     },
     {
-      "name": "AS210644 (Valve/Steam (ES))",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS210644",
-      "entries": 364,
-      "status": "ok"
-    },
-    {
-      "name": "AS199524 (Gcore)",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS199524",
-      "entries": 600,
+      "name": "AS202422 (Valve/Steam (PH))",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS202422",
+      "entries": 263,
       "status": "ok"
     },
     {
       "name": "AS212317 (Valve/Steam (FR))",
       "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS212317",
       "entries": 204,
+      "status": "ok"
+    },
+    {
+      "name": "AS216183 (Valve/Steam (TH))",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS216183",
+      "entries": 0,
       "status": "ok"
     },
     {
@@ -871,9 +739,9 @@
       "status": "ok"
     },
     {
-      "name": "AS36183 (Akamai (CDN6))",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS36183",
-      "entries": 2140,
+      "name": "AS35834 (Valve/Steam (AU))",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS35834",
+      "entries": 9,
       "status": "ok"
     },
     {
@@ -889,9 +757,15 @@
       "status": "ok"
     },
     {
-      "name": "AS216183 (Valve/Steam (TH))",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS216183",
-      "entries": 0,
+      "name": "AS393560 (Valve/Steam (PoP3))",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS393560",
+      "entries": 5,
+      "status": "ok"
+    },
+    {
+      "name": "AS210644 (Valve/Steam (ES))",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS210644",
+      "entries": 364,
       "status": "ok"
     },
     {
@@ -901,15 +775,87 @@
       "status": "ok"
     },
     {
+      "name": "AS6185 (Apple (CDN))",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS6185",
+      "entries": 98,
+      "status": "ok"
+    },
+    {
       "name": "AS393349 (Valve/Steam (PoP2))",
       "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS393349",
       "entries": 14,
       "status": "ok"
     },
     {
-      "name": "AS393560 (Valve/Steam (PoP3))",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS393560",
-      "entries": 5,
+      "name": "AS11795 (Epic Games)",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS11795",
+      "entries": 15,
+      "status": "ok"
+    },
+    {
+      "name": "AS2527 (Sony Interactive Entertainment)",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS2527",
+      "entries": 76,
+      "status": "ok"
+    },
+    {
+      "name": "AS6507 (Riot Games)",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS6507",
+      "entries": 37,
+      "status": "ok"
+    },
+    {
+      "name": "AS174 (Cogent Communications)",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS174",
+      "entries": 4537,
+      "status": "ok"
+    },
+    {
+      "name": "AS8361 (Valve/Steam (secondary))",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS8361",
+      "entries": 0,
+      "status": "ok"
+    },
+    {
+      "name": "AS54265 (Roblox (CDN))",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS54265",
+      "entries": 0,
+      "status": "ok"
+    },
+    {
+      "name": "AS8849 (Mismatch)",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS8849",
+      "entries": 51,
+      "status": "ok"
+    },
+    {
+      "name": "AS12222 (Naver/LINE)",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS12222",
+      "entries": 152,
+      "status": "ok"
+    },
+    {
+      "name": "AS16276 (OVH)",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS16276",
+      "entries": 745,
+      "status": "ok"
+    },
+    {
+      "name": "AS10747 (Twitch (secondary))",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS10747",
+      "entries": 25,
+      "status": "ok"
+    },
+    {
+      "name": "AS12876 (Scaleway/Online.net)",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS12876",
+      "entries": 28,
+      "status": "ok"
+    },
+    {
+      "name": "AS13720 (ImageShack)",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS13720",
+      "entries": 44,
       "status": "ok"
     },
     {
@@ -925,21 +871,75 @@
       "status": "ok"
     },
     {
+      "name": "AS15224 (Valve/Steam (EU))",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS15224",
+      "entries": 89,
+      "status": "ok"
+    },
+    {
+      "name": "AS19541 (Riot Games (valorant))",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS19541",
+      "entries": 0,
+      "status": "ok"
+    },
+    {
+      "name": "AS17204 (Valve/Steam (relay))",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS17204",
+      "entries": 3,
+      "status": "ok"
+    },
+    {
       "name": "AS16625 (Akamai (secondary))",
       "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS16625",
       "entries": 2097,
       "status": "ok"
     },
     {
-      "name": "AS203663 (Valve/Steam (UK))",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS203663",
-      "entries": 1,
+      "name": "AS20473 (Vultr)",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS20473",
+      "entries": 2141,
       "status": "ok"
     },
     {
-      "name": "AS202422 (Valve/Steam (PH))",
-      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS202422",
-      "entries": 263,
+      "name": "AS714 (Apple)",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS714",
+      "entries": 1980,
+      "status": "ok"
+    },
+    {
+      "name": "AS20054 (Valve/Steam (CDN))",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS20054",
+      "entries": 64,
+      "status": "ok"
+    },
+    {
+      "name": "AS199524 (Gcore)",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS199524",
+      "entries": 600,
+      "status": "ok"
+    },
+    {
+      "name": "AS6142 (Valve/Steam (primary))",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS6142",
+      "entries": 57,
+      "status": "ok"
+    },
+    {
+      "name": "AS36183 (Akamai (CDN6))",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS36183",
+      "entries": 2140,
+      "status": "ok"
+    },
+    {
+      "name": "AS11281 (Roblox (primary))",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS11281",
+      "entries": 11,
+      "status": "ok"
+    },
+    {
+      "name": "AS11278 (Riot Games (secondary))",
+      "url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS11278",
+      "entries": 14,
       "status": "ok"
     },
     {
@@ -951,7 +951,7 @@
     {
       "name": "Tor/exit-nodes",
       "url": "https://check.torproject.org/torbulkexitlist",
-      "entries": 1377,
+      "entries": 1369,
       "status": "ok"
     },
     {
